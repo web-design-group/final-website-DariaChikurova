@@ -1,0 +1,374 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-style: normal;
+}
+
+body {
+    font-family: "Inter";
+    font-weight: 300;
+    line-height: 1;
+    color: #ffffff;
+    background-image: url('Снимок экрана 2025-11-10 211648.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 18px 20px;
+    max-width: 1040px;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 1.3em;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.logo-circle {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2em;
+    list-style: none;
+    margin-left: auto;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: opacity 0.3s ease;
+}
+
+.nav-menu a:hover {
+    opacity: 0.7;
+    color: rgb(0, 11, 92);
+}
+
+.pricing-container {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-bottom: 60px;
+    margin-top: 30px;
+}
+
+.pricing-title {
+    font-size: 39px;
+    font-weight: 300;
+    color: #ffffff;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.pricing-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.pricing-card {
+    flex-basis: calc(33% - 20px);
+    min-width: 230px;
+    max-width: 500px;
+    padding: 12px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-basic {
+    background: #1e40af;
+}
+
+.card-pro {
+    background: linear-gradient(40deg, #8ea9fa 0%, #1b71fc 100%);
+}
+
+.card-business {
+    background: linear-gradient(50deg, #fe8e3e 0%, #ea580c 100%);
+}
+
+.card-header {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 35px 30px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.plan-name {
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 8px;
+}
+
+.card-basic .plan-name {
+    color: #1e40af;
+}
+
+.card-pro .plan-name {
+    color: #2473f4;
+}
+
+.card-business .plan-name {
+    color: #f97316;
+}
+
+.plan-price {
+    font-size: 48px;
+    font-weight: 300;
+}
+
+.card-basic .plan-price {
+    color: #1e40af;
+}
+
+.card-pro .plan-price {
+    color: #2473f4;
+}
+
+.card-business .plan-price {
+    color: #f97316;
+}
+
+
+.features-list {
+    list-style: none;
+    flex-grow: 1;
+    margin-bottom: 18px;
+}
+
+.feature-item {
+    font-size: 14px;
+    line-height: 1.2;
+    color: #ffffff;
+    margin-bottom: 10px;
+    padding-left: 24px;
+    position: relative;
+}
+
+.feature-item::before {
+    content: '●';
+    position: absolute;
+    left: 0;
+    font-size: 6px;
+    color: #ffffff;
+}
+
+.payment-btn {
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 300;
+    background: #ffffff;
+    color: #1e40af;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card-basic .payment-btn:hover {
+    background-color: #2473f4;
+    color: #ffffff;
+}
+
+.card-pro .payment-btn:hover {
+    background-color: #1e40af;
+    color: #ffffff;
+}
+
+.card-business .payment-btn:hover {
+    background-color:  #ff521d;
+    color: #ffffff;
+}
+
+.card-pro .payment-btn {
+    color: #3b82f6;
+}
+
+.card-business .payment-btn {
+    color: #f97316;
+}
+
+.contacts-section {
+    width: 100%;
+    padding: 36px 0;
+    background: rgba(68, 105, 255, 0.35);
+    backdrop-filter: blur(8px);
+    border-top: 3px solid rgba(255, 255, 255);
+}
+
+.contacts-container {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contacts-title {
+    font-size: 1.6em;
+    font-weight: 300;
+    margin-bottom: 2em;
+    color: #ffffff;
+}
+
+.contacts-description-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    padding-bottom: 2em;
+    border-bottom: 3px solid rgba(255, 255, 255);
+    margin-bottom: 2em;
+    max-width: 550px;
+    margin-left: auto;
+}
+
+.contacts-description-box p:last-child {
+    font-size: 0.85em;
+}
+
+.contacts-content {
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: auto;
+    max-width: calc(100% - 450px);
+}
+
+.contacts-left,
+.contacts-right {
+    flex: 1;
+}
+
+.contacts-left h4,
+.contact-block h4 {
+    font-size: 1em;
+    font-weight: 300;
+    margin-bottom: 1em;
+    color: #ffffff;
+}
+
+.contacts-left p,
+.contact-block p {
+    font-size: 0.75em;
+    line-height: 1.8;
+    margin-bottom: 0.5em;
+    color: #ffffff;
+}
+
+.contacts-left p a,
+.contact-block p a {
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 2em;
+        padding: 15px 20px;
+    }
+
+    .nav-menu {
+        gap: 1em;
+        margin-left: auto;
+    }
+
+    .nav-menu a {
+        font-size: 0.8em;
+    }
+
+    .pricing-container {
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    .pricing-title {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .pricing-card {
+        flex: 0 1 100%;
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .card-header {
+        padding: 25px 20px;
+        margin-bottom: 20px;
+    }
+
+    .plan-price {
+        font-size: 36px;
+    }
+
+    .currency {
+        font-size: 24px;
+    }
+
+    .feature-item {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+
+    .payment-btn {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    .contacts-section {
+        padding: 24px 0;
+        border-top: 2px solid rgba(255, 255, 255);
+    }
+
+    .contacts-title {
+        font-size: 1.3em;
+        margin-bottom: 1.5em;
+    }
+
+    .contacts-content {
+        flex-direction: column;
+        gap: 2em;
+        max-width: 100%;
+    }
+
+    .contacts-description-box {
+        max-width: 100%;
+    }
+
+    .contacts-left h4,
+    .contact-block h4 {
+        font-size: 0.9em;
+        margin-bottom: 0.8em;
+    }
+
+    .contacts-left p,
+    .contact-block p {
+        font-size: 0.7em;
+        line-height: 1.6;
+        margin-bottom: 0.4em;
+    }
+}
