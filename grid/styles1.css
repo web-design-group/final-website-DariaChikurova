@@ -32,10 +32,12 @@ body {
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
     align-items: center;
     margin: 0 auto; 
+    gap: 15em;
     padding: 18px 0; 
     max-width: 1040px; 
     width: 100%;
@@ -81,7 +83,9 @@ body {
 
 .hero {
     display: grid;
-    place-items: center;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
     padding: 2.5em 2em;
     min-height: 250px;
 }
@@ -110,7 +114,6 @@ body {
 }
 
 .page-container {
-    width: 100%;
     max-width: 1040px;
     margin: 0 auto; 
     padding: 0 16px; 
@@ -156,7 +159,6 @@ body {
 .stat {
     display: grid;
     place-items: center;
-    text-align: center;
 }
 
 .stat-number {
@@ -222,7 +224,6 @@ body {
     backdrop-filter: blur(10px);
     display: grid;
     grid-auto-rows: max-content auto;
-    justify-content: space-between;
 }
 
 .problem-card h3 {
@@ -319,7 +320,6 @@ body {
 }
 
 .contacts-section {
-    width: 100%;
     padding: 36px 0; 
     background: rgba(68, 105, 255, 0.35);
     backdrop-filter: blur(8px);
