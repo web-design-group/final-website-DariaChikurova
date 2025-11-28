@@ -17,11 +17,11 @@ body {
 }
 
 .character-image {
-    position: absolute;  
-    top: -130px;        
-    right: -7px;       
-    width: 200px;     
-    z-index: 10;  
+    position: absolute;
+    top: clamp(-110px, -12vw, 0px);
+    right: clamp(-20px, -2vw, 0px); 
+    width: clamp(130px, 20vw, 200px);
+    z-index: 10;
 }
 
 .character-image img {
@@ -33,13 +33,12 @@ body {
 
 .header {
     display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: max-content;
+    grid-template-columns: auto 1fr;
     align-items: center;
-    margin: 0 auto; 
-    gap: 15em;
-    padding: 18px 0; 
-    max-width: 1040px; 
+    margin: 0 auto;
+    gap: clamp(1em, 5vw, 15em); /* расстояние между DevMind и меню */
+    padding: clamp(12px, 2vw, 18px) clamp(16px, 2vw, 16px);
+    max-width: 1040px;
     width: 100%;
 }
 
@@ -49,8 +48,9 @@ body {
     grid-auto-columns: max-content;
     align-items: center;
     gap: 0.5em;
-    font-size: 1.5em;
+    font-size: clamp(1em, 1.6vw, 1.3em);
     font-weight: 500;
+    justify-self: start;
 }
 
 .logo-circle {
@@ -61,19 +61,18 @@ body {
 }
 
 .nav-menu {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: max-content;
-    gap: 1.8em;
+    display: flex;
+    flex-wrap: wrap;           /* пункты переносятся на новую строку автоматически */
+    gap: clamp(1.2em, 2vw, 2em);
     list-style: none;
-    justify-self: end;
+    justify-content: flex-end; /* прижимает меню вправо */
+    align-items: center;
 }
 
 .nav-menu a {
     color: white;
     text-decoration: none;
-    font-size: 0.9em;
-    transition: opacity 0.3s ease;
+    font-size: clamp(0.65em, 1.2vw, 0.85em); /* размер шрифта адаптируется */
 }
 
 .nav-menu a:hover {
@@ -86,28 +85,29 @@ body {
     grid-template-columns: 1fr;
     align-items: center;
     justify-items: center;
-    padding: 2.5em 2em;
-    min-height: 250px;
+    padding: clamp(1.5em, 3vw, 2.5em) clamp(1em, 2vw, 2em);
+    min-height: clamp(200px, 30vh, 250px);
+    position: relative; /* добавляем */
 }
 
 .hero-box {
     background-color: rgb(68, 105, 255);
-    padding: 2.5em 3em;
+    padding: clamp(2em, 3vw, 2.5em) clamp(1.5em, 3vw, 3em);
     border-radius: 12px;
     max-width: 1040px;
     width: 100%;
 }
 
 .hero-title {
-    font-size: 2em;
-    font-weight: 500;
-    margin-bottom: 0.8em;
+    font-size: clamp(1.3em, 3vw, 2em);
+    font-weight: clamp(500, 1vw + 500, 600);
+    margin-bottom: clamp(0.8em, 1vw, 1em);
     line-height: 1.3;
     max-width: 900px;
 }
 
 .hero-subtitle {
-    font-size: 0.95em;
+    font-size: clamp(0.9em, 1.5vw, 0.95em);
     opacity: 0.95;
     line-height: 1.6;
     max-width: 700px;
@@ -120,19 +120,19 @@ body {
 }
 
 .about-section {
-    padding: 3em 0;
+    padding: clamp(2em, 3vw, 3em) 0;
 }
 
 .section-title {
-    font-size: 2em;
+    font-size: clamp(1.4em, 3vw, 2em);
     font-weight: 500;
     margin-bottom: 0.60em;
 }
 
 .about-flex {
     display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 48px;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: clamp(24px, 5vw, 48px);
     align-items: flex-start;
 }
 
@@ -149,9 +149,8 @@ body {
 
 .about-stats {
     display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: max-content;
-    gap: 2.5em;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: clamp(1.5em, 3vw, 2.5em);
     align-items: flex-start;
     justify-content: flex-start;
 }
@@ -162,130 +161,145 @@ body {
 }
 
 .stat-number {
-    font-size: 1.75rem;
+    font-size: clamp(1.3rem, 2vw, 1.75rem);
     font-weight: 500;
     display: block;
     margin-bottom: 0.3em;
 }
 
 .stat-label {
-    font-size: 0.85rem;
+    font-size: clamp(0.8rem, 1.5vw, 0.85rem);
     opacity: 0.9;
     white-space: nowrap;
 }
 
 .problems-section {
     position: relative;
-    padding: 3em 0;
+    padding: clamp(2em, 3vw, 3em) 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .problems-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 1.5em;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); 
+    gap: clamp(1.2em, 2vw, 1.5em);
     margin-top: 1.5em;
 }
 
-.problem-card:nth-child(1) {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    min-height: 280px;
-}
 
-.problem-card:nth-child(2) {
-    grid-column: 2 / 4;
-    grid-row: 1 / 2;
-    min-height: 280px;
-}
+ @media (min-width: 800px) {
+        .problems-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .problem-card:nth-child(1) {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            min-height: 280px;
+        }
+        
+        .problem-card:nth-child(2) {
+            grid-column: 2 / 4;
+            grid-row: 1 / 2;
+            min-height: 280px;
+        }
+        
+        .problem-card:nth-child(3) {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            min-height: 200px;
+        }
+        
+        .problem-card:nth-child(4) {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+            min-height: 120px;
+        }
+        
+        .problem-card:nth-child(5) {
+            grid-column: 3 / 4;
+            grid-row: 2 / 3;
+            min-height: 200px;
+        }
+ }
 
-.problem-card:nth-child(3) {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    min-height: 200px;
-}
-
-.problem-card:nth-child(4) {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-    min-height: 120px;
-}
-
-.problem-card:nth-child(5) {
-    grid-column: 3 / 4;
-    grid-row: 2 / 3;
-    min-height: 200px;
-}
 
 .problem-card {
     background-color: rgb(68, 105, 255);
-    padding: 1.8em;
+    padding: clamp(1.5em, 2vw, 1.8em);
     border-radius: 10px;
     backdrop-filter: blur(10px);
     display: grid;
-    grid-auto-rows: max-content auto;
+    grid-template-rows: max-content 1fr;
+    gap: 0.8em;
 }
 
 .problem-card h3 {
-    font-size: 1.15em;
-    margin-bottom: 0.8em;
+    font-size: clamp(1.05em, 2vw, 1.15em);
     font-weight: 500;
 }
 
 .problem-card p {
     font-size: 0.85em;
     line-height: 1.45;
-     align-self: end; 
+    align-self: end; 
 }
 
 .advantages-section {
-    padding: 3em 0;
+    padding: clamp(2em, 3vw, 3em) 0;
 }
 
 .advantages-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5em;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: clamp(1.2em, 2vw, 1.5em);
     margin-top: 1.5em;
 }
 
-.advantage-card:nth-child(1) {
-    grid-column: 1 / 2;
-    grid-row: 1 / 3;
-    min-height: 350px;
+
+@media (min-width: 800px) {
+        .advantages-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .advantage-card:nth-child(1) {
+            grid-column: 1 / 2;
+            grid-row: 1 / 3;
+            min-height: 350px;
+        }
+        
+        .advantage-card:nth-child(2) {
+            grid-column: 2 / 3;
+            grid-row: 1 / 3;
+            min-height: 350px;
+        }
+        
+        .advantage-card:nth-child(3) {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+            min-height: 160px;
+        }
+        
+        .advantage-card:nth-child(4) {
+            grid-column: 3 / 4;
+            grid-row: 2 / 3;
+            min-height: 160px;
+        }
 }
 
-.advantage-card:nth-child(2) {
-    grid-column: 2 / 3;
-    grid-row: 1 / 3;
-    min-height: 350px;
-}
-
-.advantage-card:nth-child(3) {
-    grid-column: 3 / 4;
-    grid-row: 1 / 2;
-    min-height: 160px;
-}
-
-.advantage-card:nth-child(4) {
-    grid-column: 3 / 4;
-    grid-row: 2 / 3;
-    min-height: 160px;
-}
 
 .advantage-card {
     background-color: rgb(68, 105, 255);
-    padding: 1.8em;
+    padding: clamp(1.5em, 2vw, 1.8em);
     border-radius: 10px;
     backdrop-filter: blur(10px);
     display: grid;
-    grid-auto-rows: max-content auto;
-    justify-content: space-between;
+    grid-template-rows: max-content 1fr;
+    gap: 0.8em;
 }
 
 .advantage-card h3 {
-    font-size: 1.15em;
-    margin-bottom: 0.8em;
+    font-size: clamp(1.05em, 2vw, 1.15em);
     font-weight: 300;
 }
 
@@ -297,18 +311,19 @@ body {
 
 .cta-section {
     display: grid;
-    justify-items: end;
-    padding: 2.5em 0;
+    justify-items: end; /* было center */
+    padding: clamp(1.5em, 3vw, 2.5em) 0;
 }
+
 
 .cta-button {
     background-color: #ff582f;
     display: inline-block;
     color: white;
     border: none;
-    padding: 1.2em 3em;
+    padding: clamp(1em, 2vw, 1.2em) clamp(2em, 3vw, 3em);
     border-radius: 6px;
-    font-size: 1.05em;
+    font-size: clamp(0.95em, 1.5vw, 1.05em);
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -320,7 +335,7 @@ body {
 }
 
 .contacts-section {
-    padding: 36px 0; 
+    padding: clamp(24px, 3vw, 36px) clamp(16px, 2vw, 0); 
     background: rgba(68, 105, 255, 0.35);
     backdrop-filter: blur(8px);
     border-top: 3px solid rgba(255, 255, 255);
@@ -335,16 +350,17 @@ body {
 }
 
 .contacts-title {
-    font-size: 1.6em;
+    font-size: clamp(1.3em, 2.5vw, 1.6em);
     font-weight: 500;
-    margin-bottom: 2em;
+    margin-top: clamp(1em, 1.5vw, 1.5em);
+    margin-bottom: clamp(1.5em, 2vw, 2em);
 }
 
 .contacts-content {
     display: grid;
     gap: 0.75em;
     margin-left: auto;
-    width: 450px;
+    width: min(100%, 450px);
 }
 
 .contacts-description-box p:last-child {
@@ -353,18 +369,18 @@ body {
 
 .contacts-right {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3em;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    gap: clamp(1.5em, 3vw, 3em);
 }
 
 .contact-block h4 {
-    font-size: 1em;
+    font-size: clamp(0.95em, 1.5vw, 1em);
     font-weight: 500;
     margin-bottom: 1em;
 }
 
 .contact-block p {
-    font-size: 0.75em;
+    font-size: clamp(0.7em, 1.2vw, 0.75em);
     line-height: 1.8;
     margin-bottom: 0.5em;
 }
@@ -372,209 +388,4 @@ body {
 .contact-block p a {
     color: white;
     text-decoration: none;
-}
-
-@media (max-width: 768px) {
-    body {
-        background-attachment: fixed;
-    }
-
-    .character-image {
-        width: 130px;
-        top: -60px;
-        right: -20px;
-    }
-
-    .header {
-        grid-template-columns: 1fr;
-        padding: 12px 16px;
-    }
-
-    .nav-menu {
-        justify-self: start;
-        gap: 1.2em;
-        margin-top: 1em;
-    }
-
-    .logo {
-        font-size: 1.2em;
-    }
-
-    .hero {
-        padding: 1.5em 1em;
-        min-height: auto;
-        position: relative;
-    }
-
-    .hero-box {
-        grid-template-columns: 1fr;
-        padding: 2em 1.5em 2em 1.5em;
-        gap: 1.5em;
-        position: relative;
-        z-index: 5;
-    }
-
-    .hero-content {
-        order: 1;
-    }
-
-    .hero-title {
-        font-size: 1.3em;
-        font-weight: 600;
-        margin-bottom: 1em;
-    }
-
-    .hero-subtitle {
-        font-size: 0.9em;
-        line-height: 1.5;
-        margin-bottom: 0.8em;
-    }
-
-    .hero-stats {
-        order: 2;
-        gap: 1.5em;
-        grid-auto-flow: column;
-        justify-content: flex-start;
-    }
-
-    .hero-stat {
-        text-align: left;
-    }
-
-    .hero-stat-number {
-        font-size: 1.4rem;
-        font-weight: 600;
-    }
-
-    .hero-stat-label {
-        font-size: 0.75rem;
-        text-align: left;
-        white-space: normal;
-        max-width: 70px;
-    }
-
-    .page-container {
-        padding: 0 16px;
-    }
-
-    .about-section {
-        padding: 2em 0;
-    }
-
-    .section-title {
-        font-size: 1.4em;
-    }
-
-    .about-flex {
-        grid-template-columns: 1fr;
-    }
-
-    .about-stats {
-        grid-auto-flow: row;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5em;
-    }
-
-    .stat {
-        text-align: center;
-    }
-
-    .stat-number {
-        font-size: 1.3rem;
-    }
-
-    .stat-label {
-        font-size: 0.8rem;
-    }
-
-    .problems-grid {
-        grid-template-columns: 1fr;
-        gap: 1.2em;
-    }
-
-    .problem-card:nth-child(1),
-    .problem-card:nth-child(2),
-    .problem-card:nth-child(3),
-    .problem-card:nth-child(4),
-    .problem-card:nth-child(5) {
-        grid-column: 1 / 2;
-        grid-row: auto;
-        min-height: auto;
-    }
-
-    .problem-card {
-        padding: 1.5em;
-    }
-
-    .problem-card h3 {
-        font-size: 1.05em;
-    }
-
-    .problem-card p {
-        font-size: 0.85em;
-    }
-
-    .advantages-grid {
-        grid-template-columns: 1fr;
-        gap: 1.2em;
-    }
-
-    .advantage-card:nth-child(1),
-    .advantage-card:nth-child(2),
-    .advantage-card:nth-child(3),
-    .advantage-card:nth-child(4) {
-        grid-column: 1 / 2;
-        grid-row: auto;
-        min-height: auto;
-    }
-
-    .advantage-card {
-        padding: 1.5em;
-    }
-
-    .advantage-card h3 {
-        font-size: 1.05em;
-    }
-
-    .advantage-card p {
-        font-size: 0.9em;
-    }
-
-    .cta-section {
-        justify-items: center;
-        padding: 1.5em 0;
-    }
-
-    .cta-button {
-        padding: 1em 2em;
-        font-size: 0.95em;
-    }
-
-    .contacts-section {
-        padding: 24px 16px;
-    }
-
-    .contacts-title {
-        font-size: 1.3em;
-        margin-bottom: 1.5em;
-    }
-
-    .contacts-content {
-        width: 100%;
-        gap: 0.5em;
-    }
-
-    .contacts-right {
-        grid-template-columns: 1fr;
-        gap: 1.5em;
-        padding: 0 16px;
-    }
-
-    .contact-block h4 {
-        font-size: 0.95em;
-    }
-
-    .contact-block p {
-        font-size: 0.7em;
-    }
 }
