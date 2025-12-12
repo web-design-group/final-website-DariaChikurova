@@ -138,7 +138,7 @@ function submitForm(fullName, email, serviceType, message) {
   }, 1500);
 }
 
-/* обработка галочки согласия */
+/* галочка*/
 document.addEventListener('DOMContentLoaded', function() {
   const consentCheckbox = document.getElementById('consent');
   if (!consentCheckbox) return;
@@ -154,3 +154,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
