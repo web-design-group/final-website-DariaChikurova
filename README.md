@@ -1,4 +1,2 @@
-https://www.figma.com/design/YVGdsEEFPkI2fX00eMtSjD/Untitled?node-id=0-1&t=GuWYt2ZAc4TZG7IF-1
+# Чикурова Дарья Павловна, 3-МД-4, 2025 год
 
-# final-website-DariaChikurova
-final-website-DariaChikurova created by GitHub Classroom
